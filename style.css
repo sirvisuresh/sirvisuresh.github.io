@@ -20,19 +20,32 @@ h3
 
 }
 
- 
- a:link, a:visited { 
+.container {
     background-color: #4797A2;
-    color: black;
-    padding: 14px 120px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
- }
-a:hover
-{
-  background-color: #EEEEEE;
+    overflow: hidden;
 }
+
+.container a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 120px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.container a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Add a color to the active/current link */
+.container a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+ 
 
 .column {
   float: left;
