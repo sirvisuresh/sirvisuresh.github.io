@@ -6,12 +6,12 @@ html, body {
 body {
   font-family:  "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-weight: 100;
-  background-color: #EEEEEE;
+  background-color: #4797A2;
 }
 #main_title {
 	 text-align: center;
 	 font-size: 40px;
-	 color: #3E882E;
+	 color: #66D577;
 }
 h3
 {   text-align: left;
@@ -21,7 +21,7 @@ h3
 }
 
 .container {
-    background-color: #4797A2;
+    background-color: #414036;
     overflow: hidden;
 }
 
@@ -61,7 +61,7 @@ h3
 
 .row:after {
     content: '';
-    display: block;
+    display: table;
     clear: both;
 }
 td {
