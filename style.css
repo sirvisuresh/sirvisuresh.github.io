@@ -8,6 +8,10 @@ body {
   font-weight: 100;
   background-color: #4797A2;
 }
+.row
+ {
+ 	background-color:#141E30;
+ }
 #main_title {
 	 text-align: center;
 	 font-size: 40px;
