@@ -2,36 +2,69 @@
 <html>
   <head>
     <link href="style.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Gallery</title>
   </head>
   <body>
+  	   
        <div class="container">
        <a href="index.html">Home</a>
        <a href="aboutme.html">About Me</a>
        <a href="contactme.html">Contact</a>
        <a href="gallery.html">Gallery</a>
+       <a href="galleryadmin.html">Gallery Admin</a>
+       </div>
+     <div id="roow" class="row">
+    
      </div>
-     <div class="row">
-       
-       <div class="column">
-       <img src="images/third.jpg"  alt="Photo">
-       <img src="images/fourth.png"  alt="Photo">
-       <img src="images/seventh.jpeg"  alt="Photo">
-
+     <div id="gallery_form1" class="hideform">
+       <button id="close" style="float: right;" onclick="pagehide1()">X</button>
+       <form action="#" id="form_id1">
+        Enter Image Url:<br>
+        <input type="text" name="picture" id="url1" required >
+        <br><br>
+        Name:<br>
+        <input type="text" name="name" id="name1" required>
+        <br><br>
+        Info:<br>
+        <input type="text" name="info" id="info1" required>
+        <br><br>
+        Date:<br>
+        <input type="date" name="date" id="date1" required >
+        <br><br>
+        <input type="submit" value="Submit">
+       </form>
       </div>
-       <div class="column">
-       	<img src="images/first.jpg"  alt="Photo">
-        <img src="images/fifth.jpeg"  alt="Photo">
-        <img src="images/sixth.jpeg"  alt="Photo">
-       </div>
-
-       <div class="column">
-       <img src="images/second.jpg"  alt="Photo">
-       <img src="images/eight.jpeg"  alt="Photo">
-       <img src="images/nine.jpg"  alt="Photo">
-       </div>
-       
-     </div>
+     <script src="scripts/main.js"></script>
   </body>
 </html>
 
+  <!-- 
+       <div class="column">
+       <img src="images/third.jpg"  alt="Photo">
+       </div>
+       <div class="column">
+       <img src="images/fourth.png"  alt="Photo">
+       </div>
+       <div class="column">
+       <img src="images/seventh.jpeg"  alt="Photo">
+       </div>
+       <div class="column">
+        <img src="images/first.jpg"  alt="Photo">
+       </div>
+       <div class="column">
+       <img src="images/second.jpg"  alt="Photo">
+       </div>
+       <div class="column">
+       <img src="images/eight.jpeg"  alt="Photo">
+       </div>
+       <div class="column">
+       <img src="images/nine.jpg"  alt="Photo">
+       </div>
+       <div class="column">
+       <img src="images/fifth.jpeg"  alt="Photo">
+       </div>
+       <div class="column">
+       <img src="images/sixth.jpeg"  alt="Photo">
+       </div>
+       -->
