@@ -1,39 +1,60 @@
 var images = [ {
-      id:"1", src: "images/fourth.png",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+      id:"1", src: "file:///home/zadmin/Web_Project/last1/images/shane.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   },
   {
-    id:"2", src: "images/seventh.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+    id:"2", src: "file:///home/zadmin/Web_Project/last1/images/seventh.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   }, {
-      id:"3", src: "images/first.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+      id:"3", src: "file:///home/zadmin/Web_Project/last1/images/first.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   },
   {
-      id:"4", src: "images/second.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+      id:"4", src: "file:///home/zadmin/Web_Project/last1/images/second.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   }, {
-       id:"5",src: "images/eight.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+       id:"5",src: "file:///home/zadmin/Web_Project/last1/images/eight.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   },
   {
-     id:"6",  src: "images/nine.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+     id:"6",  src: "file:///home/zadmin/Web_Project/last1/images/nine.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   }, {
-       id:"7", src: "images/fifth.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+       id:"7", src: "file:///home/zadmin/Web_Project/last1/images/fifth.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   },
  {
-     id:"8",   src: "images/sixth.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+     id:"8",   src: "file:///home/zadmin/Web_Project/last1/images/sixth.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+  },
+  {
+     id:"9",   src: "file:///home/zadmin/Web_Project/last1/images/abd.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+  },
+  {
+     id:"10",   src: "file:///home/zadmin/Web_Project/last1/images/dhoni.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+  },
+  {
+     id:"11",   src: "file:///home/zadmin/Web_Project/last1/images/samson.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+  },
+  {
+     id:"12",   src: "file:///home/zadmin/Web_Project/last1/images/twelve.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+  },
+  {
+     id:"13",   src: "file:///home/zadmin/Web_Project/last1/images/rohit.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+  },
+  {
+     id:"15",   src: "file:///home/zadmin/Web_Project/last1/images/ipl.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+  },
+  {
+     id:"16",   src: "file:///home/zadmin/Web_Project/last1/images/william.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+  },
+  {
+     id:"17",   src: "file:///home/zadmin/Web_Project/last1/images/stark.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+  },
+  {
+     id:"18",   src: "file:///home/zadmin/Web_Project/last1/images/root.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+  },
+  {
+     id:"19",   src: "file:///home/zadmin/Web_Project/last1/images/bhuvi.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+  },
+  {
+     id:"20",   src: "file:///home/zadmin/Web_Project/last1/images/raina.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   }
-
  ];
 
-/*function validateEmail(){
-        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-        emailField=document.forms["contact_form"]["email"];
-        if (reg.test(emailField.value) == false) 
-        {
-            alert('Invalid Email Address');
-            return false;
-        }
 
-        return true;
-    }
-    */
     function isFutureDate(idate){
     var today = new Date().getTime(),
         idate = idate.split("-");
@@ -82,30 +103,32 @@ function submit_contact_form()
 }
   function showpage()
      {  document.getElementById('gallery_form').style.display = "block";
-        document.getElementById('buttons').style.display = "none";
+        document.getElementById('model').style.display = "block";
+       // document.getElementById('buttons').style.display = "none";
       }
   function pagehide()
     {
       document.getElementById('gallery_form').style.display = "none";
-      document.getElementById('buttons').style.display = "block";
+      document.getElementById('model').style.display = "none";
+      //document.getElementById('buttons').style.display = "block";
      }
      function showpage1()
      {  document.getElementById('gallery_form1').style.display = "block";
-        document.getElementById('roow').style.display = "none";
+        document.getElementById('model').style.display = "block";
       }
   function pagehide1()
     {
       document.getElementById('gallery_form1').style.display = "none";
-      document.getElementById('roow').style.display = "block";
+      document.getElementById('model').style.display = "none";
      }
      function showpage2()
      {  document.getElementById('gallery_form2').style.display = "block";
-        document.getElementById('buttons').style.display = "none";
+        //document.getElementById('buttons').style.display = "none";
       }
   function pagehide2()
     {
       document.getElementById('gallery_form2').style.display = "none";
-      document.getElementById('buttons').style.display = "block";
+      //document.getElementById('buttons').style.display = "block";
      }
 
 
@@ -147,12 +170,12 @@ function add_image() {
        var idd = Math.random();
        image.push({ id : idd,src : URL, alt : "Photo", name : Name, info : Info, update : date });
        localStorage.setItem('pictures',JSON.stringify(image));
-       alert("Image added to Gallery successfully");
        document.getElementById("form_id").submit();
       // document.getElementById("form_id").submit();
 } 
 function update_image(id)
-{  var URL = document.getElementById("url1").value;
+{  id = id.slice(8);
+   var URL = document.getElementById("url1").value;
    var Name = document.getElementById("name1").value;
    var Info = document.getElementById("info1").value;
    var date = document.getElementById("date1").value;
@@ -197,7 +220,8 @@ function update_image(id)
   //document.getElementById("form_id1").submit();
 }
 function fillform(id)
-{  showpage1();
+{  id = id.slice(8);
+   showpage1();
    var pic = JSON.parse(localStorage.getItem('pictures'));
    var index = pic.findIndex(function(item, i){
     return item.id === id;
@@ -209,7 +233,7 @@ function fillform(id)
 }
 
 function loadimage(photo){
-  var l = photo.length;
+    var l = photo.length;
     for(var i = 0; i < l; i++)
     { var src = photo[i].src;
       var alt = photo[i].alt;
@@ -227,37 +251,74 @@ function loadimage(photo){
        img.setAttribute("info", photo[i].info);
        img.setAttribute("update", photo[i].update);
        div.appendChild(img);
-       var btn = document.createElement("BUTTON");
-       btn.className="btn";
-       btn.id=id;
        var icon = document.createElement("i");
        icon.className = "fa fa-trash";
-       icon.id = "icon"+id;
-       icon.style.color = "transparent";
-      // { icon.style.color = "black"};
-       btn.appendChild(icon);
-       div.appendChild(btn);
-       var btn = document.createElement("BUTTON");
-       btn.className="btn1";
-       btn.id=id;
+       icon.id = "removeicon"+id;
+       div.appendChild(icon);
        var icon = document.createElement("i");
        icon.className = "fa fa-edit";
-       icon.id = "iconedit"+id;
-       icon.style.color = "transparent";
-       btn.appendChild(icon);
-       div.appendChild(btn);
+       icon.id = "editicon"+id;
+       div.appendChild(icon);
        var row = document.getElementById('roow');
        if (row != null) {
-        row.appendChild(div);
-       } 
-      /* var nbtn = document.getElementById(btn.id);
-       nbtn.onclick = function()
-       { remove_image(src,name,info,updat);
-       }
-       var btn = document.createElement("BUTTON");
-       btn.className="btn1";
-       div.appendChild(btn);
-      */
+        row.appendChild(div);}
+
+      var pic = document.getElementById(id);
+      pic.onmouseover = function(e)
+      {
+          id = this.id;
+          document.getElementById("editicon"+id).style.color = "white";
+          document.getElementById("removeicon"+id).style.color = "white";
+           document.getElementById("editicon"+id).style.backgroundColor = "green";
+          document.getElementById("removeicon"+id).style.backgroundColor = "green";
+          }
+     pic.onmouseout = function(e)
+     {
+      id = this.id;
+      document.getElementById("editicon"+id).style.color = "transparent";
+      document.getElementById("removeicon"+id).style.color = "transparent";
+      document.getElementById("editicon"+id).style.backgroundColor = "transparent";
+        document.getElementById("removeicon"+id).style.backgroundColor = "transparent";
+     }
+     var icon = document.getElementById("removeicon"+id);
+      icon.onmouseover = function(e)
+      {
+          id = this.id;
+          document.getElementById(id).style.color = "white";
+          document.getElementById(id).style.backgroundColor = "green";
+          id = "editicon" + id.slice(10);
+          document.getElementById(id).style.color = "white";
+          document.getElementById(id).style.backgroundColor = "green";
+          }
+     icon.onmouseout = function(e)
+     {
+      id = this.id;
+      document.getElementById(id).style.color = "transparent";
+        document.getElementById(id).style.backgroundColor = "transparent";
+        id = "editicon" + id.slice(10);
+        document.getElementById(id).style.color = "transparent";
+        document.getElementById(id).style.backgroundColor = "transparent";
+     }
+     var icon = document.getElementById("editicon"+id);
+      icon.onmouseover = function(e)
+      {
+          id = this.id;
+          document.getElementById(id).style.color = "white";
+          document.getElementById(id).style.backgroundColor = "green";
+          id = "removeicon" + id.slice(8);
+          document.getElementById(id).style.color = "white";
+          document.getElementById(id).style.backgroundColor = "green";
+          }
+     icon.onmouseout = function(e)
+     {
+      id = this.id;
+      document.getElementById(id).style.color = "transparent";
+        document.getElementById(id).style.backgroundColor = "transparent";
+        id = "removeicon" + id.slice(8);
+        document.getElementById(id).style.color = "transparent";
+        document.getElementById(id).style.backgroundColor = "transparent";
+     }
+    
           
     }
 
@@ -267,9 +328,9 @@ window.onload = function() {
     if(localStorage.getItem("pictures")==null)
     {
        loadimage(images);
+       localStorage.setItem('pictures',JSON.stringify(images));
        remove();
        edit();
-       icon();
     }
     else
     {
@@ -277,12 +338,11 @@ window.onload = function() {
       loadimage(pictures);
       remove();
       edit();
-      icon();
     }
 }
 
 function remove_image(id)
-{
+{ id = id.slice(10);
   var image = images;
     if(localStorage.getItem('pictures')!=null)
       {
@@ -293,12 +353,10 @@ function remove_image(id)
    });
   image.splice(index, 1);
   localStorage.setItem('pictures',JSON.stringify(image));
-  //alert("Image delete successfully");
-  //document.getElementById("form_id2").submit();
 }
 
 function remove()
-{var btns = document.getElementsByClassName("btn");
+{var btns = document.getElementsByClassName("fa-trash");
  for(var i=0 ; i<btns.length; i++)
 {   
       btns[i].onclick = function(e)
@@ -307,7 +365,7 @@ function remove()
 }
 }
 function edit()
-{var btns = document.getElementsByClassName("btn1");
+{var btns = document.getElementsByClassName("fa-edit");
  for(var i=0 ; i<btns.length; i++)
 {   
       btns[i].onclick = function(e)
@@ -321,41 +379,4 @@ function edit()
     }
 }
 }
-function icon()
-{
-  var icons = document.getElementsByClassName("fa fa-trash");
-  for(var i=0 ; i<icons.length;i++)
-  {
-    icons[i].onmouseover = function(e)
-    { document.getElementById(this.id).style.color = "black";
-    }
 
-    icons[i].onmouseout = function(e)
-    {
-      document.getElementById(this.id).style.color = "transparent";
-    }
-  }
-  var icons = document.getElementsByClassName("fa fa-edit");
-  for(var i=0 ; i<icons.length;i++)
-  {
-    icons[i].onmouseover = function(e)
-    { document.getElementById(this.id).style.color = "black";
-    }
-
-    icons[i].onmouseout = function(e)
-    {
-      document.getElementById(this.id).style.color = "transparent";
-    }
-  }
-
-
-}
-/*
-var buttons = document.getElementsByTagName("button");
-var buttonsCount = buttons.length;
-for (var i = 0; i <= 10; i += 1) {
-    buttons[i].onclick = function(e) {
-        alert(this.id);
-    };
-}
-*/
