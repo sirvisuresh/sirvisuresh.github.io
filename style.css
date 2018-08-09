@@ -89,6 +89,7 @@ h3
  .column img {
   width: 220px;
   height: 200px;
+  display:inline-grid;
 }
 
 

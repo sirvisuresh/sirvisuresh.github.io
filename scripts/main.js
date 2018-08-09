@@ -22,7 +22,7 @@ var images = [ {
 
  ];
 
-function validateEmail(){
+/*function validateEmail(){
         var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
         emailField=document.forms["contact_form"]["email"];
         if (reg.test(emailField.value) == false) 
@@ -33,6 +33,7 @@ function validateEmail(){
 
         return true;
     }
+    */
     function isFutureDate(idate){
     var today = new Date().getTime(),
         idate = idate.split("-");
@@ -48,7 +49,35 @@ function validateEmail(){
      }
      */
 function submit_contact_form()
-{  if(validateEmail())
+{  email=document.forms["contact_form"]["email"].value;
+   name = document.forms["contact_form"]["name"].value;
+   mobile = document.forms["contact_form"]["mobile"].value;
+
+   var flag=false;
+   var emailregex = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+   var nameregex = /^[a-zA-Z ]*$/;
+   var mobileregex = /^\d{10}$/;
+   var error ="";
+    if(nameregex.test(name) == false)
+     {
+       error=error + "Enter valid Name\n";
+       flag=true;
+       }
+    if(mobileregex.test(mobile) == false)
+       {
+        error = error + "Enter 10 digit Mobile number\n";
+        flag=true;
+       }
+    if(emailregex.test(email) == false)
+     { 
+     error=error + "Enter an Valid Email Id\n";
+     flag=true;
+      }
+     if(flag==true)
+     {
+      alert(error);
+      return false;
+     }
    document.getElementById("contact_form").submit();
 }
   function showpage()
@@ -80,19 +109,6 @@ function submit_contact_form()
      }
 
 
-function urlvalidation(){
-var url = document.getElementById("url").value;
-alert(url);
-var reg = /^((https?|ftp|smtp):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$/;
-if (reg.test(url) == false) 
-        {
-            alert('Invalid URL');
-            return false;
-        }
-
-        return true;
-}
-
 function add_image() {
 
  var URL = document.getElementById("url").value;
@@ -100,7 +116,7 @@ function add_image() {
  var Info = document.getElementById("info").value;
  var date = document.getElementById("date").value;
  var flag=false;
- var regex = /((ftp|http|https):\/\/)?(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+ var regex = /((ftp|http|https|file):\/\/)(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
  var nameregex = /^[a-zA-Z ]*$/;
    var error ="";
     if(regex.test(URL) == false)
@@ -141,7 +157,7 @@ function update_image(id)
    var Info = document.getElementById("info1").value;
    var date = document.getElementById("date1").value;
    var flag=false;
-   var regex = /((ftp|http|https):\/\/)?(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+   var regex = /((ftp|http|https|file):\/\/)(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
    var nameregex = /^[a-zA-Z ]*$/;
    var error ="";
     if(regex.test(URL) == false)
