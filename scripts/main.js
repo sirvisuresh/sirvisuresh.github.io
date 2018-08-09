@@ -139,7 +139,7 @@ function add_image() {
  var Info = document.getElementById("info").value;
  var date = document.getElementById("date").value;
  var flag=false;
- var regex = /((ftp|http|https|file):\/\/)(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+ var regex = /((ftp|http|https|file):\/\/)?(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
  var nameregex = /^[a-zA-Z ]*$/;
    var error ="";
     if(regex.test(URL) == false)
@@ -180,7 +180,7 @@ function update_image(id)
    var Info = document.getElementById("info1").value;
    var date = document.getElementById("date1").value;
    var flag=false;
-   var regex = /((ftp|http|https|file):\/\/)(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+   var regex = /((ftp|http|https|file):\/\/)?(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
    var nameregex = /^[a-zA-Z ]*$/;
    var error ="";
     if(regex.test(URL) == false)
