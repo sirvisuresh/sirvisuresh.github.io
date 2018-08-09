@@ -70,10 +70,15 @@ h3
 }
 
 /* Add a color to the active/current link */
-.container a.active {
-    background-color: #4CAF50;
+.container a:active {
+    background-color: #32753B;
     color: white;
 }
+.currentLink {
+	color: #640200;
+   background-color: #32753B;
+}
+
  
 
 .column {
@@ -205,7 +210,7 @@ input[type=submit]:hover {
 
 /* Add a background color on hover */
 .btn-group button:hover {
-    background-color: green;
+    background-color: #32753B;
 }
 
 #main_image
