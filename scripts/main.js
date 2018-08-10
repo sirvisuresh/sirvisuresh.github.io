@@ -1,56 +1,56 @@
 var images = [ {
-      id:"1", src: "/home/zadmin/Web_Project/last1/images/shane.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+      id:"1", src: "images/shane.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   },
   {
-    id:"2", src: "/home/zadmin/Web_Project/last1/images/seventh.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+    id:"2", src: "images/seventh.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   }, {
-      id:"3", src: "/home/zadmin/Web_Project/last1/images/first.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+      id:"3", src: "images/first.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   },
   {
-      id:"4", src: "/home/zadmin/Web_Project/last1/images/second.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+      id:"4", src: "images/second.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   }, {
-       id:"5",src: "/home/zadmin/Web_Project/last1/images/eight.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+       id:"5",src: "images/eight.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   },
   {
-     id:"6",  src: "/home/zadmin/Web_Project/last1/images/nine.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+     id:"6",  src: "images/nine.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   }, {
-       id:"7", src: "/home/zadmin/Web_Project/last1/images/fifth.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+       id:"7", src: "images/fifth.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   },
  {
-     id:"8",   src: "/home/zadmin/Web_Project/last1/images/sixth.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+     id:"8",   src: "images/sixth.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   },
   {
-     id:"9",   src: "/home/zadmin/Web_Project/last1/images/abd.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+     id:"9",   src: "images/abd.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   },
   {
-     id:"10",   src: "/home/zadmin/Web_Project/last1/images/dhoni.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+     id:"10",   src: "images/dhoni.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   },
   {
-     id:"11",   src: "/home/zadmin/Web_Project/last1/images/samson.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+     id:"11",   src: "images/samson.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   },
   {
-     id:"12",   src: "/home/zadmin/Web_Project/last1/images/twelve.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+     id:"12",   src: "images/twelve.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   },
   {
-     id:"13",   src: "/home/zadmin/Web_Project/last1/images/rohit.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+     id:"13",   src: "images/rohit.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   },
   {
-     id:"15",   src: "/home/zadmin/Web_Project/last1/images/ipl.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+     id:"15",   src: "images/ipl.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   },
   {
-     id:"16",   src: "/home/zadmin/Web_Project/last1/images/william.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+     id:"16",   src: "images/william.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   },
   {
-     id:"17",   src: "/home/zadmin/Web_Project/last1/images/stark.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+     id:"17",   src: "images/stark.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   },
   {
-     id:"18",   src: "/home/zadmin/Web_Project/last1/images/root.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+     id:"18",   src: "images/root.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   },
   {
-     id:"19",   src: "/home/zadmin/Web_Project/last1/images/bhuvi.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+     id:"19",   src: "images/bhuvi.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   },
   {
-     id:"20",   src: "/home/zadmin/Web_Project/last1/images/raina.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+     id:"20",   src: "images/raina.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   }
  ];
 
