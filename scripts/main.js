@@ -1,56 +1,56 @@
 var images = [ {
-      id:"1", src: "images/shane.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+      id:"1", src: "/home/zadmin/Web_Project/last1/images/shane.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   },
   {
-    id:"2", src: "images/seventh.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+    id:"2", src: "/home/zadmin/Web_Project/last1/images/seventh.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   }, {
-      id:"3", src: "images/first.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+      id:"3", src: "/home/zadmin/Web_Project/last1/images/first.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   },
   {
-      id:"4", src: "images/second.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+      id:"4", src: "/home/zadmin/Web_Project/last1/images/second.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   }, {
-       id:"5",src: "images/eight.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+       id:"5",src: "/home/zadmin/Web_Project/last1/images/eight.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   },
   {
-     id:"6",  src: "images/nine.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+     id:"6",  src: "/home/zadmin/Web_Project/last1/images/nine.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   }, {
-       id:"7", src: "images/fifth.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+       id:"7", src: "/home/zadmin/Web_Project/last1/images/fifth.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   },
  {
-     id:"8",   src: "images/sixth.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+     id:"8",   src: "/home/zadmin/Web_Project/last1/images/sixth.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   },
   {
-     id:"9",   src: "images/abd.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+     id:"9",   src: "/home/zadmin/Web_Project/last1/images/abd.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   },
   {
-     id:"10",   src: "images/dhoni.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+     id:"10",   src: "/home/zadmin/Web_Project/last1/images/dhoni.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   },
   {
-     id:"11",   src: "images/samson.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+     id:"11",   src: "/home/zadmin/Web_Project/last1/images/samson.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   },
   {
-     id:"12",   src: "images/twelve.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+     id:"12",   src: "/home/zadmin/Web_Project/last1/images/twelve.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   },
   {
-     id:"13",   src: "images/rohit.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+     id:"13",   src: "/home/zadmin/Web_Project/last1/images/rohit.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   },
   {
-     id:"15",   src: "images/ipl.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+     id:"15",   src: "/home/zadmin/Web_Project/last1/images/ipl.jpeg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   },
   {
-     id:"16",   src: "images/william.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+     id:"16",   src: "/home/zadmin/Web_Project/last1/images/william.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   },
   {
-     id:"17",   src: "images/stark.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+     id:"17",   src: "/home/zadmin/Web_Project/last1/images/stark.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   },
   {
-     id:"18",   src: "images/root.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+     id:"18",   src: "/home/zadmin/Web_Project/last1/images/root.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   },
   {
-     id:"19",   src: "images/bhuvi.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+     id:"19",   src: "/home/zadmin/Web_Project/last1/images/bhuvi.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   },
   {
-     id:"20",   src: "images/raina.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
+     id:"20",   src: "/home/zadmin/Web_Project/last1/images/raina.jpg",alt: "Photo",name:"local", info:"fetched from local machine", update:"2018/08/06"
   }
  ];
 
@@ -69,38 +69,46 @@ var images = [ {
           alert("enter correct date");
      }
      */
-function submit_contact_form()
-{  email=document.forms["contact_form"]["email"].value;
-   name = document.forms["contact_form"]["name"].value;
-   mobile = document.forms["contact_form"]["mobile"].value;
-
-   var flag=false;
-   var emailregex = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-   var nameregex = /^[a-zA-Z ]*$/;
+function mobile_validation(id)
+{
+   var mobileno = document.getElementById(id);
+   var mobile = mobileno.value;
    var mobileregex = /^\d{10}$/;
-   var error ="";
-    if(nameregex.test(name) == false)
-     {
-       error=error + "Enter valid Name\n";
-       flag=true;
-       }
-    if(mobileregex.test(mobile) == false)
+   if(mobileregex.test(mobile) == false)
        {
-        error = error + "Enter 10 digit Mobile number\n";
-        flag=true;
+         mobileno.style.borderColor = "red";
+         mobileno.value="";
        }
-    if(emailregex.test(email) == false)
-     { 
-     error=error + "Enter an Valid Email Id\n";
-     flag=true;
-      }
-     if(flag==true)
-     {
-      alert(error);
-      return false;
-     }
-   document.getElementById("contact_form").submit();
+    else 
+    mobileno.style.borderColor = "#ccc";   
 }
+function email_validation(id)
+{
+  var emailid = document.getElementById(id);
+  var email = emailid.value;
+  var emailregex = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+   if(emailregex.test(email) == false)
+       {
+          emailid.style.borderColor = "red";
+          emailid.value="";
+       }
+   else
+    emailid.style.borderColor = "#ccc";
+}
+function url_validation(id)
+{  var weburl = document.getElementById(id);
+   var url = weburl.value;
+   var regex = /((ftp|http|https|file):\/\/)(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+   if(regex.test(url)==false)
+   {
+          weburl.style.borderColor = "red";
+          weburl.value="";
+    }
+    else
+      weburl.style.borderColor = "#ccc"
+
+}
+
   function showpage()
      {  document.getElementById('gallery_form').style.display = "block";
         document.getElementById('model').style.display = "block";
@@ -139,29 +147,13 @@ function add_image() {
  var Info = document.getElementById("info").value;
  var date = document.getElementById("date").value;
  var flag=false;
- var regex = /((ftp|http|https|file):\/\/)?(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
- var nameregex = /^[a-zA-Z ]*$/;
-   var error ="";
-    if(regex.test(URL) == false)
-     {
-       error=error + "Enter correct URL\n";
-       flag=true;
-       }
-    if(nameregex.test(Name) == false)
-       {
-        error = error + "Enter correct Name\n";
-        flag=true;
-       }
-    if(isFutureDate(date))
+ var error ="";
+  if(isFutureDate(date))
      { 
-     error=error + "Enter correct date,not a Future date\n";
-     flag=true;
+       alert("Enter correct date,not a Future date");
+       document.getElementById("date").value="";
+       return false;
       }
-     if(flag==true)
-     {
-      alert(error);
-      return false;
-     }
        var image=images;
        if(localStorage.getItem('pictures')!==null)
        {
@@ -179,30 +171,13 @@ function update_image(id)
    var Name = document.getElementById("name1").value;
    var Info = document.getElementById("info1").value;
    var date = document.getElementById("date1").value;
-   var flag=false;
-   var regex = /((ftp|http|https|file):\/\/)?(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
-   var nameregex = /^[a-zA-Z ]*$/;
-   var error ="";
-    if(regex.test(URL) == false)
-     {
-       error=error + "Enter correct URL\n";
-       flag=true;
-       }
-    if(nameregex.test(Name) == false)
-       {
-        error = error + "Enter correct Name\n";
-        flag=true;
-       }
     if(isFutureDate(date))
      { 
-     error=error + "Enter correct date,not a Future date\n";
-     flag=true;
+        alert("Enter correct date,Not a Future date");
+        document.getElementById("date1").value="";
+        return false;
       }
-     if(flag==true)
-     {
-      alert(error);
-      return false;
-     }
+
     var image = images;
     if(localStorage.getItem('pictures')!=null)
       {

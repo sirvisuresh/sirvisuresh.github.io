@@ -20,10 +20,10 @@
     <input type="text" id="name" name="name" placeholder="Your name.." required>
 
     <label for="mobile">Mobile No.</label>
-    <input type="text" id="mobile" name="mobile" placeholder="Your Mobile No.." required>
+    <input type="text" id="mobile" name="mobile" placeholder="Your Mobile No.." onchange="mobile_validation(this.id)" required>
 
     <label for="email">Email</label>
-    <input type="text" id="email" name="email" placeholder="Your Email.." required>
+    <input type="text" id="email" name="email" placeholder="Your Email.." required onchange="email_validation(this.id)">
     
     <label for="subject">Subject</label>
     <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
