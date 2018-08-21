@@ -454,14 +454,21 @@ function drop(ev,id) {
       }
       document.getElementById(id+"show").innerHTML = "Total: " + total.innerHTML;
       ev.target.children[1].textContent = "Rs " + total.innerHTML;
-
       cell2.onchange = function(e) {
-          var value = parseInt(cell2.children[0].value);
-          if(value===0)
+          var value = Number(cell2.children[0].value);
+          if(Number.isInteger(value)==false)
+          {
+          	alert("Enter Quantity in Integer");
+          	cell2.children[0].value=parseInt(value);
+
+          }
+          if(value<1)
           { if(confirm("Do you want to remove " + event.target.parentNode.parentNode.getElementsByTagName("td")[0].innerHTML + " from cart?"))
             remove_row(event);
-            else
+            else if(value===0)
             cell2.children[0].value=1;
+            else
+            cell2.children[0].value=Math.abs(value);
            }
           var value = parseInt(cell2.children[0].value);
     	  cell3.innerHTML = value*b;
@@ -574,6 +581,7 @@ function filter_table()
   var upper_case = input.value.toUpperCase();
   var tables = document.getElementsByClassName("filter");
   var block = document.getElementsByClassName("table");
+  document.getElementById("alert1").style.display = "none";
   for (i = 0; i < tables.length; i++) {
     if (tables[i]) {
       if (tables[i].innerHTML.toUpperCase().indexOf(upper_case) > -1) {

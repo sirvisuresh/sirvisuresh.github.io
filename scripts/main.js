@@ -82,6 +82,10 @@ function mobile_validation(id)
     else 
     mobileno.style.borderColor = "#ccc";   
 }
+function submit_contact_form(id)
+{
+  document.getElementById(id).submit();
+}
 function email_validation(id)
 {
   var emailid = document.getElementById(id);
