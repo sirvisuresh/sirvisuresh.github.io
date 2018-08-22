@@ -1,3 +1,4 @@
+// Restaurants Menu
 var menu = [ {
       id:"1", name: "Grilled Chicken",type: "Main Course",price:"220"
   },
@@ -60,6 +61,7 @@ var menu = [ {
   }
  ];
 
+//Restaurant table for adding item
 var tables = [ {
 	          id:"table1",name:"Table 1"},
 	           {
@@ -89,7 +91,7 @@ var tables = [ {
 	           {
 	          id:"table14",name:"Table 14"},
 	           {
-	          id:"table14",name:"Table 15"},
+	          id:"table15",name:"Table 15"},
 	           {
 	          id:"table16",name:"Table 16"},
 	          {
@@ -107,6 +109,9 @@ var tables = [ {
 	          {
 	          id:"table23",name:"Table 23"}
 ];
+
+
+//this function will generate bill and will show bill modal and will clear the session data like total items,total amount 
 function clear_table(id)
 {  	
 	var table = document.getElementById(id);
@@ -152,64 +157,11 @@ function clear_table(id)
 	p.innerHTML = "Total: " + document.getElementById(id+"total").innerHTML;
 	subdiv.appendChild(p);
 	console.log(subdiv);
-	/*
-	var del_div = document.getElementById(id + "final_bill");
-	if(del_div!=null)
-	{
-		del_div.parentNode.removeChild(del_div);
-	}
-	var new_table = document.createElement("table");
-		new_table.id = id + "final_bill";
-		new_table.className = "pay_bill";
-   // var tbody = document.createElement("tbody");
-     var row = document.createElement("tr");
-	    var th1 = document.createElement("th");
-	    th1.innerHTML ="Item name";
-	    var th2 = document.createElement("th");
-	    th2.innerHTML ="Quantity";;
-	    var th3 = document.createElement("th");
-	    th3.innerHTML ="Amount";;
-	    row.appendChild(th1);
-	    row.appendChild(th2);
-	    row.appendChild(th3);
-	    console.log(row);
-	   // tbody.appendChild(row);
-	    //console.log(tbody);
-	 //new_table.innerHTML = '<tr><td>' + th1.innerHTML + '</td>' + '</tr>';
-	 new_table.innerHTML = th1.innerHTML + "          " + th2.innerHTML+ "          "+th3.innerHTML+"<br>";
-	//var new_table = new_table.getElementsByTagName('tbody')[0];
-	/*console.log(new_table);
-    var tbody = new_table.children[0];
-    console.log(tbody);
-	vawr row = new_table.insertRow(-1);
-	console.log(new_table);
-	console.log(row);
-	var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
-    var cell3 = row.insertCell(2);
-    cell1.innerHTML = "Item Name";
-    cell2.innerHTML = "Quantity";
-    cell3.innerHTML = "Amount";
-    //document.getElementById(id + "final_bill").getElementsByTagName('tbody');
-    */
-   /* console.log(new_table);
-    for(var i=1;i<tr.length;i++)
-    { var td = tr[i].getElementsByTagName("td");
-      /*var row = new_table.insertRow(-1);
-	  var cell1 = row.insertCell(0);
-      var cell2 = row.insertCell(1);
-      var cell3 = row.insertCell(2);
-      cell1.innerHTML = td[0].innerHTML;
-      cell2.innerHTML = td[1].children[0].value;
-      cell3.innerHTML = td[2].innerHTML;*/
-      //new_table.innerHTML = new_table.innerHTML+ td[0].innerHTML + "          " + td[1].children[0].value+ "          "+td[2].innerHTML+"<br>";
-    //}
+
    
     var p = document.createElement("p");
     p.innerHTML = document.getElementById(id + "total").innerHTML;
-     //new_table.innerHTML = new_table.innerHTML+ p.innerHTML +"<br>";
-    //subdiv.appendChild(new_table);
-   // div.appendChild(p);
+     
    div.appendChild(subdiv);
     document.getElementById("bill").appendChild(div);
     
@@ -228,9 +180,11 @@ function clear_table(id)
     total.innerHTML = "";
     document.getElementById(id+"show").innerHTML = "Total: " + total.innerHTML;
     document.getElementById(id+"invoicemodal").style.display = "block";
+    document.getElementById("end"+id).disabled=true;
     
     return false;
 }
+//this function will load all the table to html file from javascript using tables object variable
 function loadtables()
 {      var a = document.getElementById("bill");
 	   for(var i=0;i<tables.length;i++)
@@ -257,20 +211,23 @@ function loadtables()
 	    };
 	    div.ondragenter=function(e)
 	    {
-	    	dragEnter(event);
-	    }
+	    	dragEnter(event,this.id);
+	    };
          div.ondragleave=function(e)
 	    {
-	    	dragLeave(event);
-	    }
+	    	dragLeave(event,this.id);
+	    };
 	    var h1 = document.createElement("h4");
 	    h1.className = "filter";
 	    h1.innerHTML = tables[i].name;
+	    h1.id = "heading" + tables[i].id;
 	    div.appendChild(h1);
 	    var total_bill = document.createElement("totalbill");
 	    total_bill.innerHTML = "Rs 0";
+	    total_bill.id ="total_bill" + tables[i].id;
 	    var count = document.createElement("itemc");
 	    count.innerHTML = " | Total item:0";
+	    count.id = "count"+tables[i].id;
 	    var div1 = document.createElement("div");
 	    div1.className = "modal";
 	    div1.id = tables[i].id + "modal";
@@ -306,6 +263,7 @@ function loadtables()
 	    close.id = "end" + tables[i].id;
 	    close.style.cssFloat = "right";
 	    close.innerHTML = "Generate Bill";
+	    close.disabled=true;
 	    close.onclick = function(e)
 	    {
             return clear_table(this.id.slice(3));
@@ -331,6 +289,9 @@ function loadtables()
 	    a.appendChild(h);
 
 }
+
+
+//this function will load menu to html file from javascript using menu object variable
 function loadmenu() {
 	   var a = document.getElementById("menu");
 	   for(var i=0;i<menu.length;i++)
@@ -362,6 +323,7 @@ function loadmenu() {
 
 	   
   }
+  //on page load these two elements will be loaded
  window.onload = function()
  {
  	loadmenu();
@@ -374,35 +336,41 @@ function drag(ev)
 function allowDrop(ev) {
     ev.preventDefault();
 }
-function dragLeave(ev)
+function dragLeave(ev,id)
 {
 	ev.target.style.backgroundColor = "";
 }
-function dragEnter(ev)
+function dragEnter(ev,id)
 {
 	ev.target.style.backgroundColor = "#CFECF7";
+	if(ev.target.id!=id)
+	{
+		ev.target.parentNode.style.backgroundColor="#CFECF7";
+	}
 }
-/*
-var tables;
-window.onload = function() {
- tables = document.getElementsByClassName("table");
-var l = tables.length;
-for(var i=0;i<l;i++)
-{
-	
-}
-}*/
+
 function drop(ev,id) {
     ev.preventDefault();
-    ev.target.style.backgroundColor = "";
+    var element;
+    if(ev.target.id===id)
+    {
+       element=ev.target;
+    }
+    else
+    {
+    	element = document.getElementById(id);
+    }
+    element.style.backgroundColor = "";
+    ev.target.style.backgroundColor="";
+    document.getElementById("end"+element.id).disabled=false;
     var data = ev.dataTransfer.getData("text");
     var ele  = document.getElementById(data); 
     var item_name = ele.children[0].textContent;
-    var a = Number((ev.target.children[1].textContent).slice(3))
+    var a = Number((element.children[1].textContent).slice(3))
     var b  = Number(ele.children[1].textContent);
-    var i = Number((ev.target.children[2].textContent).slice(12));
+    var i = Number((element.children[2].textContent).slice(12));
     var i=i+1;
-    ev.target.children[1].textContent ="Rs "+ (a+b);
+    element.children[1].textContent ="Rs "+ (a+b);
     var table = document.getElementById(id+"bill");
     var tr = table.getElementsByTagName("tr");
     var flag=false;
@@ -417,7 +385,7 @@ function drop(ev,id) {
         	var total = document.getElementById(id+"total");
         	total.innerHTML = parseInt(total.innerHTML) + b;
             document.getElementById(id+"show").innerHTML = "Total: " + total.innerHTML;
-        	ev.target.children[1].textContent ="Rs " + total.innerHTML;
+        	element.children[1].textContent ="Rs " + total.innerHTML;
             flag=true;
             break;
          }
@@ -453,7 +421,7 @@ function drop(ev,id) {
       	total.innerHTML = parseInt(total.innerHTML) + parseInt(td.innerHTML);
       }
       document.getElementById(id+"show").innerHTML = "Total: " + total.innerHTML;
-      ev.target.children[1].textContent = "Rs " + total.innerHTML;
+      element.children[1].textContent = "Rs " + total.innerHTML;
       cell2.onchange = function(e) {
           var value = Number(cell2.children[0].value);
           if(Number.isInteger(value)==false)
@@ -480,7 +448,7 @@ function drop(ev,id) {
       	total.innerHTML = parseInt(total.innerHTML) + parseInt(td.innerHTML);
       }
       document.getElementById(id+"show").innerHTML = "Total: " + total.innerHTML;
-      ev.target.children[1].textContent = "Rs " + total.innerHTML;
+      element.children[1].textContent = "Rs " + total.innerHTML;
       //updating total count
       var row = document.getElementById(id + "modal").getElementsByTagName("tr");
       var total_count =0;
@@ -497,39 +465,7 @@ function drop(ev,id) {
       { total_count = total_count + parseInt(row[i].getElementsByTagName("td")[1].children[0].value);
         }
        document.getElementById(id).children[2].innerHTML =  " | Total item:" + total_count;
-     /*  
-    if((item_name in map)===false)
-   { map[item_name]=1;
-    var table = document.getElementById(id+"bill");
-    var row = table.insertRow(-1);
-    var x = document.createElement("INPUT");
-    x.setAttribute("type", "number");
-    x.value = 1;
-    var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
-    var cell3 = row.insertCell(2);
-    cell2.id = "cell2"+item_name;
-    cell3.id = "cell3"+item_name;
-    cell1.innerHTML = item_name;
-    cell2.appendChild(x);
-    cell3.innerHTML = map[item_name]*b;
-    cell2.onchange = function(e) {
-    	  var value = parseInt(cell2.children[0].value);
-    	  cell3.innerHTML = value*b;
-    	  map[item_name]=value;
-    	  //document.getElementById("total").innerHTML = "Rs" + 
-    }
-     }
-     else
-     {  var cell = document.getElementById("cell2" + item_name);
-     	cell.children[0].value = parseInt(cell.children[0].value) + 1;
-        map[item_name]=map[item_name]+1;
-        var cell = document.getElementById("cell3" + item_name);
-     	cell.innerHTML = map[item_name]*b;
-     }
-   // ev.target.children[2].textContent ="Total item:"+i;
-   ev.target.setAttribute("map",map);
-   */
+
 }
 function remove_row(ev)
 {
@@ -541,7 +477,7 @@ function remove_row(ev)
     for(var i=1;i<tr.length;i++)
     { total_count = total_count + parseInt(tr[i].getElementsByTagName("td")[1].children[0].value);
         }
-    var id = rows.id.slice(0,6);
+    var id = rows.id.slice(0,-4);
     document.getElementById(id).children[2].innerHTML =  " | Total item:" + total_count;
     //update total
       var total = document.getElementById(id+"total");
@@ -553,10 +489,16 @@ function remove_row(ev)
       }
       document.getElementById(id+"show").innerHTML = "Total: " + total.innerHTML;
       document.getElementById(id).children[1].textContent = "Rs " + total.innerHTML;
+     if(tr.length===1)
+      {
+          document.getElementById("end"+id).disabled=true;
+      }
+      else
+      	 document.getElementById("end"+id).disabled=false;
+
 }
 function show_bill(id) {
-	//var a = document.getElementById(id+"form");
-    //a.style.display = "block";
+
     document.getElementById(id).style.backgroundColor = "#35FD3B";
 	var a = document.getElementById(id+"modal");
     a.style.display = "block";
@@ -565,11 +507,9 @@ function show_bill(id) {
 }
 function hide_bill(ev,id)
 {   
-	//var a = document.getElementById(id.slice(5)+"form");
-    //a.style.display = "none";
+	
     document.getElementById(id.slice(5)).style.backgroundColor ="";
 	ev.target.parentNode.parentNode.style.display="none";
-   // ev.target.display="none";
 }
 function remove_bill(ev)
 { var bill = ev.target.parentNode.parentNode;
