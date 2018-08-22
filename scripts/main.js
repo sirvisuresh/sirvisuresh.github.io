@@ -55,20 +55,16 @@ var images = [ {
  ];
 
 
-    function isFutureDate(idate){
+//this will check whether date is future date or not
+function isFutureDate(idate){
     var today = new Date().getTime(),
         idate = idate.split("-");
-
-    idate = new Date(idate[0], idate[1] - 1, idate[2]).getTime();
+        idate = new Date(idate[0], idate[1] - 1, idate[2]).getTime();
     return (today - idate) < 0;
      }
-    /* function validate_date(form)
-     {
-         var date = document.forms[form]["date"];
-         if(isFutureDate(date))
-          alert("enter correct date");
-     }
-     */
+
+
+//it will change mobile input element color red if mobile no is not valid
 function mobile_validation(id)
 {
    var mobileno = document.getElementById(id);
@@ -82,10 +78,16 @@ function mobile_validation(id)
     else 
     mobileno.style.borderColor = "#ccc";   
 }
+
+
+//it will submit contact form
 function submit_contact_form(id)
 {
   document.getElementById(id).submit();
 }
+
+
+//it will change email input element color red if email id is not valid
 function email_validation(id)
 {
   var emailid = document.getElementById(id);
@@ -99,6 +101,9 @@ function email_validation(id)
    else
     emailid.style.borderColor = "#ccc";
 }
+
+
+//it will change url input element color red if url is not valid
 function url_validation(id)
 {  var weburl = document.getElementById(id);
    var url = weburl.value;
@@ -113,37 +118,39 @@ function url_validation(id)
 
 }
 
-  function showpage()
+
+//it will display form for adding an image
+ function showpage()
      {  document.getElementById('gallery_form').style.display = "block";
         document.getElementById('model').style.display = "block";
-       // document.getElementById('buttons').style.display = "none";
       }
-  function pagehide()
+
+
+ //it will hide add image form 
+ function pagehide()
     {
       document.getElementById('gallery_form').style.display = "none";
       document.getElementById('model').style.display = "none";
-      //document.getElementById('buttons').style.display = "block";
      }
-     function showpage1()
+
+
+ //it will display form for update an image
+ function showpage1()
      {  document.getElementById('gallery_form1').style.display = "block";
         document.getElementById('model').style.display = "block";
       }
-  function pagehide1()
+ 
+
+ //it will hide update image form
+ function pagehide1()
     {
       document.getElementById('gallery_form1').style.display = "none";
       document.getElementById('model').style.display = "none";
      }
-     function showpage2()
-     {  document.getElementById('gallery_form2').style.display = "block";
-        //document.getElementById('buttons').style.display = "none";
-      }
-  function pagehide2()
-    {
-      document.getElementById('gallery_form2').style.display = "none";
-      //document.getElementById('buttons').style.display = "block";
-     }
+    
 
 
+//It will add an image to gallery
 function add_image() {
 
  var URL = document.getElementById("url").value;
@@ -152,6 +159,8 @@ function add_image() {
  var date = document.getElementById("date").value;
  var flag=false;
  var error ="";
+
+ //checking for date, it should not be future date
   if(isFutureDate(date))
      { 
        alert("Enter correct date,not a Future date");
@@ -169,12 +178,18 @@ function add_image() {
        document.getElementById("form_id").submit();
       // document.getElementById("form_id").submit();
 } 
+
+
+
+//it will update the image
 function update_image(id)
 {  id = id.slice(8);
    var URL = document.getElementById("url1").value;
    var Name = document.getElementById("name1").value;
    var Info = document.getElementById("info1").value;
    var date = document.getElementById("date1").value;
+
+   //checking for date, it should not be future date
     if(isFutureDate(date))
      { 
         alert("Enter correct date,Not a Future date");
@@ -198,6 +213,12 @@ function update_image(id)
   //alert("Image modified successfully");
   //document.getElementById("form_id1").submit();
 }
+
+
+
+/* it will show update image form on clicking on update icon of image 
+   and it will fill default detail of that image in form
+ */
 function fillform(id)
 {  id = id.slice(8);
    showpage1();
@@ -211,6 +232,9 @@ function fillform(id)
    document.getElementById("date1").value = pic[index].update;
 }
 
+
+
+//it will load all images to gallery page from object variable photo
 function loadimage(photo){
     var l = photo.length;
     for(var i = 0; i < l; i++)
@@ -243,6 +267,7 @@ function loadimage(photo){
         row.appendChild(div);}
 
       var pic = document.getElementById(id);
+
       pic.onmouseover = function(e)
       {
           id = this.id;
@@ -251,6 +276,7 @@ function loadimage(photo){
            document.getElementById("editicon"+id).style.backgroundColor = "green";
           document.getElementById("removeicon"+id).style.backgroundColor = "green";
           }
+
      pic.onmouseout = function(e)
      {
       id = this.id;
@@ -260,6 +286,7 @@ function loadimage(photo){
         document.getElementById("removeicon"+id).style.backgroundColor = "transparent";
      }
      var icon = document.getElementById("removeicon"+id);
+
       icon.onmouseover = function(e)
       {
           id = this.id;
@@ -269,6 +296,7 @@ function loadimage(photo){
           document.getElementById(id).style.color = "white";
           document.getElementById(id).style.backgroundColor = "green";
           }
+
      icon.onmouseout = function(e)
      {
       id = this.id;
@@ -279,6 +307,7 @@ function loadimage(photo){
         document.getElementById(id).style.backgroundColor = "transparent";
      }
      var icon = document.getElementById("editicon"+id);
+
       icon.onmouseover = function(e)
       {
           id = this.id;
@@ -288,6 +317,7 @@ function loadimage(photo){
           document.getElementById(id).style.color = "white";
           document.getElementById(id).style.backgroundColor = "green";
           }
+
      icon.onmouseout = function(e)
      {
       id = this.id;
@@ -302,6 +332,12 @@ function loadimage(photo){
     }
 
 }
+
+
+
+/* it will load pictures from local storage if local storage is not empty
+ * otherwise it will load images locally
+ */
 window.onload = function() {
     //var image = JSON.parse(images);
     if(localStorage.getItem("pictures")==null)
@@ -320,6 +356,9 @@ window.onload = function() {
     }
 }
 
+
+
+//it will fetch images data from localstorage and remove an image from that and push it to localstorage
 function remove_image(id)
 { id = id.slice(10);
   var image = images;
@@ -334,6 +373,9 @@ function remove_image(id)
   localStorage.setItem('pictures',JSON.stringify(image));
 }
 
+
+
+//it will set remove_image function for onclick event on clicking on trash icon and then reload page
 function remove()
 {var btns = document.getElementsByClassName("fa-trash");
  for(var i=0 ; i<btns.length; i++)
@@ -343,6 +385,10 @@ function remove()
       location.reload(); }
 }
 }
+
+
+
+//it will set update_image function for onclick event on clicking on edit icon and then clicking on submit
 function edit()
 {var btns = document.getElementsByClassName("fa-edit");
  for(var i=0 ; i<btns.length; i++)
@@ -358,13 +404,3 @@ function edit()
     }
 }
 }
-/*
-var links = document.getElementsByTagName("a");
-for (var i = 0; i < links.length; i++) {
-  links[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("currentLink");
-    current[0].className = current[0].className.replace(" currentLink", "");
-    this.className += " currentLink";
-  });
-}
-*/
