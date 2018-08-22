@@ -1,3 +1,4 @@
+
 // Restaurants Menu
 var menu = [ {
       id:"1", name: "Grilled Chicken",type: "Main Course",price:"220"
@@ -61,6 +62,8 @@ var menu = [ {
   }
  ];
 
+
+
 //Restaurant table for adding item
 var tables = [ {
 	          id:"table1",name:"Table 1"},
@@ -111,7 +114,11 @@ var tables = [ {
 ];
 
 
-//this function will generate bill and will show bill modal and will clear the session data like total items,total amount 
+
+
+/** this function will generate bill on clicking on "Generate bill" button and will show bill modal
+  * will clear the session data like total items,total amount 
+  **/
 function clear_table(id)
 {  	
 	var table = document.getElementById(id);
@@ -119,30 +126,33 @@ function clear_table(id)
 	var tr = table_modal.getElementsByTagName("tr");
 	var div = document.createElement("div");
 	var subdiv = document.createElement("div");
+
 	subdiv.id = id +"invoice";
 	subdiv.className = "invoice";
 	div.className = "modal";
 	div.id = id + "invoicemodal";
+   
 	var button = document.createElement("BUTTON");
 	   	button.className = "button";
 	   	button.style.cssFloat = "right";
 	   	button.id = "payit" + id;
 	   	button.onclick = function(e) {
-	   		hide_bill(event,this.id);
+            hide_bill(event,this.id);
             remove_bill(event);
 	   	};
 	   	button.innerHTML = "&times;";
 	   	subdiv.appendChild(button);
+
 	var h4 = document.createElement("h4");
 	h4.innerHTML = "Bill for " + table.children[0].innerHTML;
 	h4.style.marginBottom = "10px";
 	subdiv.appendChild(h4);
 	var old_table = document.getElementById(id+"bill").cloneNode(true);
-	console.log(old_table);
 	var rows = old_table.getElementsByTagName("tr");
-	//alert(rows.length);
+    
+    //creating bill from order detail
 	for(var i=1;i<rows.length;i++)
-	{   //console.log(rows[i].getElementsByTagName("td")[1]);
+	{   
 	    var cell = rows[i].getElementsByTagName("td")[1];
 	    var del_icon = rows[i].getElementsByTagName("td")[3];
 	    del_icon.parentNode.removeChild(del_icon);
@@ -151,20 +161,18 @@ function clear_table(id)
 	    input.parentNode.removeChild(input);
 	    cell.innerHTML = value;
 	    	
-	}  
+	}
+
 	subdiv.appendChild(old_table);
 	var p = document.createElement("h3");
 	p.innerHTML = "Total: " + document.getElementById(id+"total").innerHTML;
+	p.style.marginLeft = "305px";
+	p.style.whiteSpace="nowrap";
 	subdiv.appendChild(p);
-	console.log(subdiv);
-
-   
-    var p = document.createElement("p");
-    p.innerHTML = document.getElementById(id + "total").innerHTML;
-     
-   div.appendChild(subdiv);
+    div.appendChild(subdiv);
     document.getElementById("bill").appendChild(div);
     
+    //deleting rows from order detail table
 	while(tr.length>1)
 	{
 	 tr[1].parentNode.removeChild(tr[1]);
@@ -174,19 +182,27 @@ function clear_table(id)
     document.getElementById(id).children[2].innerHTML = " | Total item:0";
     var table_name = document.getElementById(id).children[0].innerHTML;
     var total = document.getElementById(id + "total").innerHTML;
-   // alert("Total amount to be paid by " + table_name + " is " + total );
     table.children[1].innerHTML = "Rs 0";
     var total = document.getElementById(id + "total");
     total.innerHTML = "";
     document.getElementById(id+"show").innerHTML = "Total: " + total.innerHTML;
     document.getElementById(id+"invoicemodal").style.display = "block";
     document.getElementById("end"+id).disabled=true;
-    
     return false;
 }
-//this function will load all the table to html file from javascript using tables object variable
+
+
+
+
+/**
+  * this function will load all the table to html file from javascript using tables object variable
+  * It will set function for ondrop, ondragover, onclick, ondragenter, ondragleave event for each table
+**/
 function loadtables()
-{      var a = document.getElementById("bill");
+{      
+	   var a = document.getElementById("bill");
+	   
+	   //loading all the tables from object varible tables 
 	   for(var i=0;i<tables.length;i++)
 	   {
 	   	var button = document.createElement("BUTTON");
@@ -200,23 +216,29 @@ function loadtables()
 	   	var div = document.createElement("div");
 	    div.className = "table";
 	    div.id = tables[i].id;
+
 	    div.ondrop= function(e){
 	    	drop(event,this.id);
 	    };
+
 	    div.ondragover=function(e){
 	    	allowDrop(event);
 	    };
+
 	    div.onclick=function(e){
 	    	show_bill(this.id);
 	    };
+
 	    div.ondragenter=function(e)
 	    {
 	    	dragEnter(event,this.id);
 	    };
+
          div.ondragleave=function(e)
 	    {
 	    	dragLeave(event,this.id);
 	    };
+
 	    var h1 = document.createElement("h4");
 	    h1.className = "filter";
 	    h1.innerHTML = tables[i].name;
@@ -254,20 +276,20 @@ function loadtables()
 	    h3.innerHTML = "Total: ";
 	    h3.id = tables[i].id + "show";
 	    h3.style.marginTop = "10px";
-	   // h3.style.cssFloat = "right";
 	    var total = document.createElement("total");
 	    total.id = tables[i].id + "total";
 	    total.style.display="none";
-	   // total.style.cssFloat = "right";
 	    var close = document.createElement("BUTTON");
 	    close.id = "end" + tables[i].id;
 	    close.style.cssFloat = "right";
 	    close.innerHTML = "Generate Bill";
 	    close.disabled=true;
+
 	    close.onclick = function(e)
 	    {
             return clear_table(this.id.slice(3));
 	    }
+
 	    close.style.marginTop = "-25px";
         div2.appendChild(button);
 	    form.appendChild(h2);
@@ -280,20 +302,28 @@ function loadtables()
 	    div.appendChild(total_bill);
 	    div.appendChild(count);
 	    a.appendChild(div);
-	    a.appendChild(div1);
-	}
-	var h = document.createElement("p");
+	    a.appendChild(div1);  }
+
+	    //creating alert when there are no result of search filter
+	    var h = document.createElement("p");
 	    h.innerHTML = "No Table Found";
 	    h.id = "alert1";
 	    h.style.display = "none";
 	    a.appendChild(h);
 
-}
+ }
 
 
-//this function will load menu to html file from javascript using menu object variable
+
+
+/** this function will load menu to html file from javascript using menu object variable
+  * It will set function on ondragstart event on each menu item
+**/
 function loadmenu() {
+	   
 	   var a = document.getElementById("menu");
+
+	   //loading all menu items for object varible menu
 	   for(var i=0;i<menu.length;i++)
 	   {
 	   	var div = document.createElement("div");
@@ -323,23 +353,36 @@ function loadmenu() {
 
 	   
   }
-  //on page load these two elements will be loaded
- window.onload = function()
- {
- 	loadmenu();
- 	loadtables();
- }
+
+
+  //on page load these Tables and Menu will be loaded
+window.onload = function()
+     {
+ 	    loadmenu();
+        loadtables();
+     }
+
+
+//it will transfer id of dragged element to target(on which element is going to be dropped)
 function drag(ev)
-{
- ev.dataTransfer.setData("text",ev.target.id);
-}
+     {
+        ev.dataTransfer.setData("text",ev.target.id);
+     }
+
+// it will prevent default handling of element and allows drop on that element
 function allowDrop(ev) {
     ev.preventDefault();
 }
+
+
+//on dragleave it will set background color of table block to default color
 function dragLeave(ev,id)
 {
 	ev.target.style.backgroundColor = "";
 }
+
+
+//on dragenter it will change background color of table block
 function dragEnter(ev,id)
 {
 	ev.target.style.backgroundColor = "#CFECF7";
@@ -349,17 +392,28 @@ function dragEnter(ev,id)
 	}
 }
 
+
+
+
+/** on drop this function will update table content and it will add item into bill if 
+  * it does not exist,increase count of item in order otherwise
+  * it will enable the Generate bill button on drop
+  * it will set function on onchange event on Item quantity input
+  * it will set function on onclick event on Delete icon
+ **/
 function drop(ev,id) {
     ev.preventDefault();
     var element;
     if(ev.target.id===id)
     {
+       //if item is dropped on table name or on itemcount or on total amount displayed
        element=ev.target;
     }
     else
-    {
+    {   //if item is dropped on table block area
     	element = document.getElementById(id);
     }
+
     element.style.backgroundColor = "";
     ev.target.style.backgroundColor="";
     document.getElementById("end"+element.id).disabled=false;
@@ -374,6 +428,8 @@ function drop(ev,id) {
     var table = document.getElementById(id+"bill");
     var tr = table.getElementsByTagName("tr");
     var flag=false;
+
+    //if item is already present in cart of a particular table
     for(var i=0;i<tr.length;i++)
     {   var td = tr[i].getElementsByTagName("td");
         if(td[0]!=undefined)
@@ -391,6 +447,8 @@ function drop(ev,id) {
          }
         }
      }
+
+     //if item is being added for first time
     if(flag==false)
     { var row = table.insertRow(-1);
       var x = document.createElement("INPUT");
@@ -422,14 +480,21 @@ function drop(ev,id) {
       }
       document.getElementById(id+"show").innerHTML = "Total: " + total.innerHTML;
       element.children[1].textContent = "Rs " + total.innerHTML;
+
+      // on changing Quantity of an Item
       cell2.onchange = function(e) {
+
           var value = Number(cell2.children[0].value);
+          
+          //if Quantity is not an integer
           if(Number.isInteger(value)==false)
           {
           	alert("Enter Quantity in Integer");
           	cell2.children[0].value=parseInt(value);
 
           }
+          
+          //if Quantity is negative or 0
           if(value<1)
           { if(confirm("Do you want to remove " + event.target.parentNode.parentNode.getElementsByTagName("td")[0].innerHTML + " from cart?"))
             remove_row(event);
@@ -442,6 +507,8 @@ function drop(ev,id) {
     	  cell3.innerHTML = value*b;
           var total = document.getElementById(id+"total");
         total.innerHTML=0;
+
+      //calculating total amount
       for(var i=1;i<tr.length;i++)
       { 
       	var td = tr[i].getElementsByTagName("td")[2];
@@ -449,7 +516,7 @@ function drop(ev,id) {
       }
       document.getElementById(id+"show").innerHTML = "Total: " + total.innerHTML;
       element.children[1].textContent = "Rs " + total.innerHTML;
-      //updating total count
+      //updating total count on main page
       var row = document.getElementById(id + "modal").getElementsByTagName("tr");
       var total_count =0;
       for(var i=1;i<row.length;i++)
@@ -458,7 +525,7 @@ function drop(ev,id) {
        document.getElementById(id).children[2].innerHTML =  " | Total item:" + total_count;
        }
       }
-     //updating total count
+     //updating total count on main page
       var row = document.getElementById(id + "modal").getElementsByTagName("tr");
       var total_count =0;
       for(var i=1;i<row.length;i++)
@@ -467,6 +534,12 @@ function drop(ev,id) {
        document.getElementById(id).children[2].innerHTML =  " | Total item:" + total_count;
 
 }
+
+
+
+/** It will delete item from Order
+  * It will check if there is no item in Order then it will disable Generate bill button
+ **/  
 function remove_row(ev)
 {
 	var row = ev.target.parentNode.parentNode;
@@ -474,11 +547,14 @@ function remove_row(ev)
 	row.parentNode.removeChild(row);
     var tr = rows.getElementsByTagName("tr");
     var total_count =0;
+
+    //updating total count of items after removing any item from cart
     for(var i=1;i<tr.length;i++)
     { total_count = total_count + parseInt(tr[i].getElementsByTagName("td")[1].children[0].value);
         }
     var id = rows.id.slice(0,-4);
     document.getElementById(id).children[2].innerHTML =  " | Total item:" + total_count;
+
     //update total
       var total = document.getElementById(id+"total");
       total.innerHTML = 0;
@@ -489,6 +565,8 @@ function remove_row(ev)
       }
       document.getElementById(id+"show").innerHTML = "Total: " + total.innerHTML;
       document.getElementById(id).children[1].textContent = "Rs " + total.innerHTML;
+
+      //disable an button if there is no item in cart
      if(tr.length===1)
       {
           document.getElementById("end"+id).disabled=true;
@@ -497,6 +575,11 @@ function remove_row(ev)
       	 document.getElementById("end"+id).disabled=false;
 
 }
+
+
+
+
+//it will show order for a particular table on clicking on corresponding table
 function show_bill(id) {
 
     document.getElementById(id).style.backgroundColor = "#35FD3B";
@@ -505,16 +588,28 @@ function show_bill(id) {
     var a = document.getElementById("close" + id);
     a.style.display = "block";
 }
+
+
+
+//it will hide bill or order by on clicking on corresponding "x" button.
 function hide_bill(ev,id)
 {   
 	
     document.getElementById(id.slice(5)).style.backgroundColor ="";
 	ev.target.parentNode.parentNode.style.display="none";
 }
+
+
+
+//it will destroy bill on clicking on "x" button of bill.
 function remove_bill(ev)
 { var bill = ev.target.parentNode.parentNode;
   bill.parentNode.removeChild(bill);   
 }
+
+
+
+//it will filter table by table_name and notify if there is no such table
 function filter_table()
 { var flag=0;
   var input = document.getElementById("search_table");
@@ -538,6 +633,10 @@ function filter_table()
    }
 
 }
+
+
+
+//it will filter menu by dish name or category i.e. dessert,main course,beverages
 function filter_menu()
 { var flag=0;
   var input = document.getElementById("search_menu");

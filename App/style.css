@@ -3,7 +3,7 @@ html, body {
   padding: 0;
   height: 100%; 
   max-width: 100%;
-  overflow-y: hidden;
+  overflow-y: hidden; /* Disable vertical scroll of body */
   
 }
 
@@ -14,26 +14,22 @@ body {
 }
 
 
-th, td {
-    padding: 15px;
-    text-align: left;
-}
-
+/* css used for menu */
 .menu 
-{   color: #1E2121;
-	position: absolute;
+{   color: #1E2121; 
+	position: absolute; /*menu will be positioned relative to first positioned ancester or viewport */
 	margin-top:80px;
 	top:20px;
 	right:20px;
 	padding: 25px;
 	padding-top: 0px;
-	float: right;
-	overflow-y: scroll;
+	overflow-y: scroll; /* Enable vertical scroll of Menu */
 	height: 80%;
-	overflow-x: hidden;
+	overflow-x: hidden; /* Disable horizontal scroll of Menu */
 }
 
 
+/* css used for each table */
 .table
 {   color: #1E2121;
     margin-left: 5px;
@@ -41,10 +37,9 @@ th, td {
 	margin-bottom: 5px;
     padding: 40px;
 	width: 150px;
-	z-index: 1;
-	white-space: nowrap;
+	white-space: nowrap; /* Text of table will not wrap to next line until an <br> tag occurs */
 	background-color: #FBFBFB;
-	box-shadow: 0px 1px 5px 1px #888888;
+	box-shadow: 0px 1px 5px 1px #888888; /* for creating shadow box */
 	border-radius: 3px;
 }
 
@@ -54,6 +49,7 @@ h3{
 }
 
 
+/* css used for each item in menu */
 .item
 {
 	padding: 5px;
@@ -64,15 +60,20 @@ h3{
 	width: 900px;
 	right:0%;
 }
+
 th,td
-{
-	padding-right: 45px;
-	padding-left: 45px;
+{   padding:10px 45px 10px 45px; /* setting padding for table data and table heading */
+    text-align: left; /* setting text align of table data and heading to left */
 }
+
+/* css for each dish name */
 .dish
 {
 	font-size: 20px;
 }
+
+
+/* css for pop up modal-box */ 
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -85,47 +86,45 @@ th,td
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
-.modal1 {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
+
+
+/* css for order detail for each table */
 .form{
 	background-color: #EEEFEF;
-	position: fixed;
-	z-index: 2;
+	position: fixed;/* Stay in place */
 	top: 100px;
 	left:200px;
 	width:60%;
 	padding:30px;
 	max-height: 50%;
 	border-radius: 5px;
-   overflow-y: auto;
+   overflow-y: auto;/* Enable scroll if needed */
 	border-radius: 5px;
 }
+
 h4
 {
 	font-size: 20px;
 	margin:2px;
 }
+
+/* css for total amount shown */
 .total_bill
 {
 	margin:2px;
 }
+
+/* css for item count shown in table */
 .itemc
 {
 	margin:2px;
 }
+
+
+/* css for whole block of tables */
 .bill{
 	margin-top: 45px;
-	float:left;
+	float:left; /* table block floats to the left of its container */
 	overflow-y: auto;
 	height: 90%;
 	overflow-x: hidden;
@@ -135,10 +134,10 @@ h4
 
 }
 
+/* css for search bars */
 .search {
 	position: fixed;
 	top:20px;
-    background-repeat: no-repeat; /* Do not repeat the icon image */ /* Full-width */
     font-size: 16px; /* Increase font-size */
     padding: 10px 14px 10px 14px; /* Add some padding */
     border: 1px solid #ddd; /* Add a grey border */
@@ -146,73 +145,84 @@ h4
     border-radius: 3px;
     box-shadow: 0px 1px 5px 1px #888888
 }
+
+
+/* css for table 1 */
 #table1
 {
 	margin-top: 5px;
 }
+
 #search_table
 {   top:52px;
 	width:150px;
 }
+
 #search_menu
 {   top:52px;
 	right:235px;
 	width: 700px;
 }
+
+/* css for container that contains bill and menu */
 .container
 {
 	height: 90%;
 }
+
+/* css for alert shown when there is no result for filter menu */
 #alert
 {
 	margin-right: 460px;
 	font-size: 20px;
 	font-weight: 20px;
 }
+
+/* css for alert shown when there is no result for filter menu */
 #alert1
 {
 	font-size: 20px;
 	font-weight: 20px;
 	margin-left: 10px;
 }
+
+/* css for main menu heading */
 #menu_heading
 {right:600px;
  top:2px;
  position: absolute;
  font-size: 25px;
 }
+
+/* css for main table heading */
 #table_heading
 {   top:2px;
 	margin-left:20px;
 	font-size: 25px;
 }
+
+/* css for bill shown */
 .invoice
 {
 	background-color: #7AC3CE;
-	position: fixed;
-	z-index: 4;
+	position: fixed; /* position will be fixed even if on scroll */
 	top: 100px;
 	left:300px;
 	width:500px;
 	padding:30px;
 	max-height: 50%;
 	border-radius: 5px;
-   overflow-y: auto;
-	border-radius: 5px;
+    overflow-y: auto; /* enable scroll when it overflows */
 }
+
 .invoice table td{
-	padding-top: 2px;
-	padding-bottom: 2px;
-	padding-right: 30px;
-	padding-left: 30px;
+	padding:2px 35px 2px 35px; /*padding from top,right,bottom,left accordingly */
 	margin-right: 30px;
 	margin-left: 30px;
 }
+
 .invoice table th{
-	padding-top: 2px;
-	padding-bottom: 2px;
-	padding-right: 30px;
-	padding-left: 30px;
+	padding:2px 35px 2px 35px; /*padding from top,right,bottom,left accordingly */
 	margin-right: 30px;
 	margin-left: 30px;
 }
